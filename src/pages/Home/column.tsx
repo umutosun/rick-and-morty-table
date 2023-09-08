@@ -13,10 +13,10 @@ export const columns = [
     header: "name",
     cell: (info: any) => {
       return (
-        <p className=" flex items-center w-60">
+        <p className=" flex items-center ">
           <img
             src={info.row.original.image}
-            className="w-10 rounded-full inline "
+            className="w-10 rounded-full inline ml-7"
             alt="characters"
           />
           <p className="inline ml-4 text-sm ">{info.getValue()}</p>

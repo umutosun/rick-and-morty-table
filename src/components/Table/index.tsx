@@ -25,7 +25,7 @@ const Table = ({
     getCoreRowModel: getCoreRowModel(),
   });
   return (
-    <div className="m-4 border-solid  border-2 border-neutralColors-color600 py-6 rounded-lg ">
+    <div className="m-2 border-solid  border-2 border-neutralColors-color500  rounded-lg">
       <table>
         <tbody className="">
           {getHeaderGroups().map((headerGroup) => (
@@ -33,7 +33,7 @@ const Table = ({
               {headerGroup.headers.map((header) => (
                 <th
                   key={header.id}
-                  className="w-72 border-solid border-b-2 uppercase">
+                  className="w-72 border-solid border-b-2 uppercase p-4 text-sm">
                   {header.isPlaceholder
                     ? null
                     : flexRender(
@@ -47,10 +47,10 @@ const Table = ({
         </tbody>
         <tbody className="">
           {getRowModel().rows.map((row) => (
-            <tr key={row.id}>
+            <tr key={row.id} className="border-solid border-2">
               {row.getVisibleCells().map((cell) => (
                 <th key={cell.id}>
-                  <p className="mt-5">
+                  <p className="mt-5 text-sm">
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </p>
                 </th>

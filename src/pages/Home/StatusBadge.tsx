@@ -18,7 +18,7 @@ const StatusBadge = ({ status }: { status: string }) => {
   return (
     <div>
       <p
-        className={`inline rounded-full py-1 px-3 cursor-pointer ${bgColorClass} ${textColorClass}`}>
+        className={`inline rounded-full py-1 px-3 cursor-pointer text-xs ${bgColorClass} ${textColorClass}`}>
         {status}
       </p>
     </div>
