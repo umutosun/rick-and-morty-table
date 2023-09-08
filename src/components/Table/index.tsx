@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import React, { useMemo } from "react";
 import {
   flexRender,
   getCoreRowModel,
@@ -25,11 +25,11 @@ const Table = ({
     getCoreRowModel: getCoreRowModel(),
   });
   return (
-    <div className="m-2 border-solid  border-2 border-neutralColors-color500  rounded-lg">
+    <div className="m-2 border-solid  border-2 border-neutralColors-color500 rounded-lg">
       <table>
         <tbody className="">
-          {getHeaderGroups().map((headerGroup) => (
-            <tr key={headerGroup.id} className="">
+          {getHeaderGroups().map((headerGroup, index) => (
+            <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <th
                   key={header.id}
@@ -46,11 +46,15 @@ const Table = ({
           ))}
         </tbody>
         <tbody className="">
-          {getRowModel().rows.map((row) => (
-            <tr key={row.id} className="border-solid border-2">
+          {getRowModel().rows.map((row, index) => (
+            <tr
+              key={row.id}
+              className={
+                index % 2 === 0 ? "bg-neutralColors-color300" : "bg-white"
+              }>
               {row.getVisibleCells().map((cell) => (
                 <th key={cell.id}>
-                  <p className="mt-5 text-sm">
+                  <p className="mt-5 text-sm ">
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </p>
                 </th>

@@ -1,13 +1,13 @@
+import GenderBadge from "./GenderBadge";
 import StatusBadge from "./StatusBadge";
 
 export const columns = [
   {
     accessorKey: "gender",
     header: "gender",
-    cell: (info: any) => {
-      return <p>{info.getValue()}</p>;
-    },
+    cell: (info: any) => <GenderBadge gender={info.getValue()} />,
   },
+
   {
     accessorKey: "name",
     header: "name",
